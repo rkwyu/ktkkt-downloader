@@ -1,18 +1,20 @@
-# About #
+# ktkkt-downloader #
+
+## About ##
 A tool to get anime from [ktkkt.top](https://www.ktkkt.top/) with CLI (Command Line Interface) and GUI (Graphical User Interface).
 It currently supports to download one single episode / all episodes in a series.
 
-# Prerequisites #
+## Prerequisites ##
 To running this tool, please make sure the following prerequisites are ready:
 * [FFmpeg](https://www.ffmpeg.org/)
 
-# Usage #
+## Usage ##
 Before running the application, required packages need to be installed by following command:
 ```
 $ python -m pip install -r requirements.txt
 ```
 
-## CLI (Command Line Interface) ##
+### CLI (Command Line Interface) ###
 ```
 # download single episode
 $ python __main__.py -d OUTPUT_DIR -u TARGET_URL
@@ -21,7 +23,7 @@ $ python __main__.py -d OUTPUT_DIR -u TARGET_URL
 $ python __main__.py -d OUTPUT_DIR -u TARGET_URL -a
 ```
 
-### Example ###
+#### Example ####
 鬼滅之刃粵語,  
 series URL: https://www.ktkkt.top/movie/index15170.html  
 episode 1 URL: https://www.ktkkt.top/play/15170-0-0.html  
@@ -36,7 +38,7 @@ $ python __main__.py -d /home/ktkkt/ -u https://www.ktkkt.top/play/15170-0-0.htm
 $ python __main__.py -d /home/ktkkt/ -u https://www.ktkkt.top/movie/index15170.html -a
 ```
 
-## GUI (Graphical User Interface) ##
+### GUI (Graphical User Interface) ###
 ```
 # start gui
 $ python __main__.py
@@ -44,5 +46,5 @@ $ python __main__.py
 ![ktkkt-downloader screenshot](doc/screenshot.png?raw=true "ktkkt-downloader")
 Provide the TARGET_URL, OUTPUT_DIR and then click the buttons to download the single episode / all episodes in a series  
 
-# License #
+## License ##
 [GNU GPL v3.0](LICENSE.md)

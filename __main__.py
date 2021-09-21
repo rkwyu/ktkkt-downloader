@@ -74,7 +74,7 @@ def run_gui():
     layout = [
         [sg.Column(control_column)]
     ]
-    window = sg.Window('KIKKT-DOWNLOADER', layout)
+    window = sg.Window('KTKKT-DOWNLOADER', layout)
     while True:
         try:
             event, values = window.read()
