@@ -41,6 +41,7 @@ $ python __main__.py -d /home/ktkkt/ -u https://www.ktkkt.top/movie/index15170.h
 # start gui
 $ python __main__.py
 ```
+![ktkkt-downloader screenshot](doc/screenshot.png?raw=true "ktkkt-downloader")
 Provide the TARGET_URL, OUTPUT_DIR and then click the buttons to download the single episode / all episodes in a series  
 
 # License #
