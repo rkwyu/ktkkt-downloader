@@ -27,7 +27,7 @@ def get_series(url: str):
 
 
 def get_products(url: str):
-    url = constant.SERIES_URL.format(series_id=get_series(url)['id'])
+    url = constant.SERIES_URL.format(series_id=get_series(url).id)
     req = requests.get(url)
     doc = BeautifulSoup(req.content, 'html.parser')
     elements = doc.select('a[target="_self"][title]')
