@@ -8,7 +8,21 @@ It currently supports to download one single episode / all episodes in a series.
 To running this tool, please make sure the following prerequisites are ready:
 * [FFmpeg](https://www.ffmpeg.org/)
 
-## Usage ##
+## Usage (Package) ##
+```
+from ktkkt_downloader import KtkktDownloader
+downloader = KtkktDownloader("output")
+
+# download all episodes in a series (e.g. 鬼滅之刃粵語)
+series_url = "https://www.ktkkt.cc/movie/index15170.html"
+downloader.download_series(series_url)
+
+# download single episode (e.g. 鬼滅之刃粵語 EP.01)
+episode_url = "https://www.ktkkt.cc/play/15170-0-0.html"
+downloader.download_episode(episode_url)
+```
+
+## Usage (Standalone) ##
 Before running the application, required packages need to be installed by following command:
 ```
 $ python -m pip install -r requirements.txt
