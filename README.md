@@ -1,4 +1,4 @@
-# ktkkt-downloader #
+# ktkkt-downloader [![PyPI version](https://badge.fury.io/py/ktkkt-downloader.svg)](https://badge.fury.io/py/ktkkt-downloader) #
 
 ## About ##
 A tool to get anime from [ktkkt.cc](https://www.ktkkt.cc/) with CLI (Command Line Interface) and GUI (Graphical User Interface).
