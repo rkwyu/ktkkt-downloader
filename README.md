@@ -9,7 +9,12 @@ To running this tool, please make sure the following prerequisites are ready:
 * [FFmpeg](https://www.ffmpeg.org/)
 
 ## Usage (Package) ##
+Install the package from PyPi: https://pypi.org/project/ktkkt-downloader/
+```console
+$ python -m pip install ktkkt-downloader
 ```
+
+```python
 from ktkkt_downloader import KtkktDownloader
 downloader = KtkktDownloader("output")
 
@@ -24,12 +29,12 @@ downloader.download_episode(episode_url)
 
 ## Usage (Standalone) ##
 Before running the application, required packages need to be installed by following command:
-```
+```console
 $ python -m pip install -r requirements.txt
 ```
 
 ### CLI (Command Line Interface) ###
-```
+```console
 # download single episode
 $ python __main__.py -d OUTPUT_DIR -u TARGET_URL
 
@@ -41,7 +46,7 @@ $ python __main__.py -d OUTPUT_DIR -u TARGET_URL -a
 鬼滅之刃粵語,  
 series URL: https://www.ktkkt.cc/movie/index15170.html  
 episode 1 URL: https://www.ktkkt.cc/play/15170-0-0.html  
-```
+```console
 # download 鬼滅之刃粵語 episode 1 to /home/ktkkt/ by the episode URL
 $ python __main__.py -d /home/ktkkt/ -u https://www.ktkkt.cc/play/15170-0-0.html
 
@@ -53,7 +58,7 @@ $ python __main__.py -d /home/ktkkt/ -u https://www.ktkkt.cc/movie/index15170.ht
 ```
 
 ### GUI (Graphical User Interface) ###
-```
+```console
 # start gui
 $ python __main__.py
 ```
