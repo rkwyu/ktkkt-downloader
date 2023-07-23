@@ -3,42 +3,7 @@ import os
 import PySimpleGUI as sg
 import traceback
 
-import constant
-import downloader
-import logger
-import scraper
-
-
-def download_series(url, directory):
-    season = 1
-    series = scraper.get_series(url)
-    products = scraper.get_products(url)
-    for product in products:
-        downloader.download_m3u8(
-            scraper.get_m3u8(product.id),
-            directory,
-            constant.FILENAME.format(
-                drama=series.name,
-                season=str(season).zfill(2),
-                episode=str(product.name)
-            )
-        )
-
-
-def download_episode(url, directory):
-    season = 1
-    series = scraper.get_series(url)
-    product = scraper.get_product(url)
-    downloader.download_m3u8(
-        scraper.get_m3u8(product.id),
-        directory,
-        constant.FILENAME.format(
-            drama=series.name,
-            season=str(season).zfill(2),
-            episode=str(product.name)
-        )
-    )
-
+from ktkkt_downloader import KtkktDownloader
 
 def run_gui():
     control_column = [
@@ -82,20 +47,15 @@ def run_gui():
                 break
             elif event == 'KEY_BUTTON_DOWNLOAD_SERIES':
                 if len(values['KEY_INPUTTEXT_URL']) > 0 and len(values['KEY_IN_DIRECTORY']) > 0:
-                    download_series(
-                        values['KEY_INPUTTEXT_URL'],
-                        values['KEY_IN_DIRECTORY']
-                    )
+                    downloader = KtkktDownloader(values['KEY_IN_DIRECTORY'])
+                    downloader.download_series(values['KEY_INPUTTEXT_URL'])
                     sg.popup('Download Completed')
             elif event == 'KEY_BUTTON_DOWNLOAD_EPISODE':
                 if len(values['KEY_INPUTTEXT_URL']) > 0 and len(values['KEY_IN_DIRECTORY']) > 0:
-                    download_episode(
-                        values['KEY_INPUTTEXT_URL'],
-                        values['KEY_IN_DIRECTORY']
-                    )
+                    downloader = KtkktDownloader(values['KEY_IN_DIRECTORY'])
+                    downloader.download_episode(values['KEY_INPUTTEXT_URL'])
                     sg.popup('Download Completed')
         except Exception as e:
-            logger.error(traceback.format_exc())
             sg.popup(traceback.format_exc(), title='Error')
 
 
@@ -108,11 +68,10 @@ args = parser.parse_args()
 sg.theme('DarkAmber')
 if __name__ == "__main__":
     if args.url is not None and args.directory is not None:
+        downloader = KtkktDownloader(args.directory)
         if args.all is True:
-            download_series(args.url, args.directory)
-            logger.info('Download Completed')
+            downloader.download_series(args.url)
         else:
-            download_episode(args.url, args.directory)
-            logger.info('Download Completed')
+            downloader.download_episode(args.url)
     else:
         run_gui()
