@@ -1,5 +1,11 @@
 # ktkkt-downloader [![PyPI version](https://badge.fury.io/py/ktkkt-downloader.svg)](https://badge.fury.io/py/ktkkt-downloader) #
 
+## ⚠️ Repository Discontinued ⚠️
+This repository is no longer maintained, because [ktkkt.cc](https://www.ktkkt.cc/) is inaccessible.  
+A new project [anime-dl](https://github.com/rkwyu/anime-dl) has been started to serve the same purpose and aims to cover more websites.  
+Please visit the new repository for the latest updates: [anime-dl](https://github.com/rkwyu/anime-dl)
+
+
 ## About ##
 A tool to get anime from [ktkkt.cc](https://www.ktkkt.cc/) with CLI (Command Line Interface) and GUI (Graphical User Interface).
 It currently supports to download one single episode / all episodes in a series.
